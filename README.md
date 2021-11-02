@@ -13,7 +13,7 @@ docker build -t d2mapapi https://github.com/RulerOf/d2mapapi-docker.git
 
 Then supply a copy of Diablo II 1.13c as a bind mount at `/game` inside of the container when you run it.
 
-For exmaple, if you have a copy of D2 at `/srv/d2`:
+For example, if you have a copy of D2 at `/srv/d2`:
 
 ```shell
 docker run -d --rm -v /srv/d2:/game --name d2mapapi d2mapapi:latest
