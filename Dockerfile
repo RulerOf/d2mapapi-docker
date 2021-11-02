@@ -19,11 +19,6 @@ USER web
 RUN winecfg
 USER root
 
-# d2mapapi
-COPY ./root /
-WORKDIR /app
-EXPOSE 8080
-
 # Faster cleanup — we're not keeping state
 ENV S6_SERVICES_GRACETIME=100
 ENV S6_KILL_FINISH_MAXTIME=100
@@ -40,3 +35,8 @@ RUN apt-get update; apt-get -y install \
 HEALTHCHECK \
   --start-period=30s \
   CMD ["/bin/bash", "/healthcheck.sh"]
+
+# d2mapapi
+COPY ./root /
+WORKDIR /app
+EXPOSE 8080
