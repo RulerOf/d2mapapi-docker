@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting D2MapAPI Server"
+exec \
+  s6-setuidgid web \
+  /usr/bin/wine /app/d2mapapi.exe /game 0.0.0.0
